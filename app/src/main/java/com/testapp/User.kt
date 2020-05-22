@@ -13,5 +13,4 @@ class User(
     val photo: String,
     val password: String
 ) {
-//сначала юзер написать нужно, а пока разметку только для второго сделал
 }
