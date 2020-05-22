@@ -23,8 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         if (sh.isLoggedIn) {
             nextPage()
-        } else if (!sh.firstTime) {
-            sh.setFirstTime()
+        } else if (!sh.isLoggedIn) {
             genUsers()
         }
 
@@ -60,9 +59,9 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-
         Users_db.get(application).getUserDao().checkPass(email, pass).observe(this,
             Observer {
+                Log.e("N!!q",it+"q")
                 val checkRes = email.equals(it)
                 if (checkRes) {
                     SharedPrefManager.getInstance(application).saveUserData(email, pass)
