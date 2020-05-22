@@ -24,7 +24,6 @@ class ProfileActivity : AppCompatActivity() {
             email_tv.text = it.email
             name_tv.text = it.name
             lastname_tv.text = it.lastname
-            Log.e("NN!!profile",it.photo)
                 Glide.with(application)
                     .load(it.photo)
                     .placeholder(R.drawable.ic_account_circle_black_24dp)
